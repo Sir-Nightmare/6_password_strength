@@ -52,9 +52,9 @@ if __name__ == '__main__':
     elif score == 0:
         result = 'Score: 1. Your password was found in blacklist'
     elif score == -1:
-        result = 'Score: 1. Your password have to include at least one letter '
+        result = 'Score: 1. Your password has to include at least one letter '
     elif score == -2:
-        result = 'Score: 1. Your password have to include at least 5 characters'
+        result = 'Score: 1. Your password has to include at least 5 characters'
     elif 0 < score < 6:
         result = 'Score: ' + str(score) + '. Your password is not strong enough. You should choose another one'
     else:
