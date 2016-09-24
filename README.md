@@ -13,10 +13,17 @@ password requirements:
 inclusion at least 5 characters
 
 5 <= n <= 7: +0
+
 8 <= n <= 10 +1
+
 11 <= n <= 14 +2
+
 n => 15: +3
+
 the use of both upper-case and lower-case letters (case sensitivity) +2
+
 inclusion of one or more numerical digits +2
+
 inclusion of special characters, such as @, #, $ +2
+
 prohibition of words found in a password blacklist - score = 1
