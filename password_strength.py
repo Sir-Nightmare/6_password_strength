@@ -1,19 +1,19 @@
 import re
+import sys
 
 
-def load_data(filepath):
-    data = ""
+def load_blacklist(filepath):
     with open(filepath, 'r', encoding="utf8") as file:
-        data = file.read().split()
-    return data
+        blacklist = file.read().split()
+    return blacklist
 
 
 def get_password_strength(password, blacklist):
-    if password in blacklist:  # check blacklist
+    if password in blacklist:
         return 0
     score = 1
 
-    if len(password) < 5:  # check password length +3
+    if len(password) < 5:
         return -2
     elif 8 <= len(password) <= 10:
         score += 1
@@ -22,31 +22,21 @@ def get_password_strength(password, blacklist):
     else:
         score += 3
 
-    if re.search('[А-Яа-яA-Za-z]', password):  # check letters +1
+    if re.search('[А-Яа-яA-Za-z]', password):
         score += 1
     else:
         return -1
 
-    if re.search('\d', password):  # check digits +1
+    if re.search('\d', password):
         score += 1
-    if re.search('\W', password):  # check special characters +2
+    if re.search('\W', password):
         score += 2
-    if not (password.isupper() or password.islower()):  # check upper and lowercase +2
+    if not (password.isupper() or password.islower()):
         score += 2
     return score
 
 
-if __name__ == '__main__':
-
-    filepath = 'blacklist.txt'
-    if input('Do you want to use your own password list? (y/n)\n').lower() == 'y':
-        filepath = input('Type path to the file:\n')
-    password_list = load_data(filepath)
-    password = input('Type your password:\n')
-
-    score = get_password_strength(password, password_list)
-
-    result = ''
+def print_result(score):
     if score == 10:
         result = 'Score: 10. Your password is perfect!'
     elif score == 0:
@@ -60,3 +50,11 @@ if __name__ == '__main__':
     else:
         result = 'Score: ' + str(score) + '. Your password is quite good :)'
     print(result)
+
+
+if __name__ == '__main__':
+    filepath = sys.argv[1]
+    password_list = load_blacklist(filepath)
+    password = input('Type your password:\n')
+    score = get_password_strength(password, password_list)
+    print_result(score)

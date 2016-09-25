@@ -1,5 +1,11 @@
 # 6_password_strength
 
+This script finds 10 the most frequent words in the text.
+
+You can run it by the command:
+
+python lang_frequency.py <path_to_blacklist>
+
 You can download your own password list from here:
 
 https://github.com/danielmiessler/SecLists/tree/master/Passwords
@@ -8,7 +14,7 @@ https://dazzlepod.com/site_media/txt/passwords.txt
 
 https://forum.antichat.ru/threads/281655/
 
-password requirements:
+Password requirements and scores for each characteristic:
 
 inclusion at least 5 characters
 
