@@ -3,8 +3,8 @@ import sys
 
 
 def load_blacklist(filepath):
-    with open(filepath, 'r', encoding="utf8") as file:
-        blacklist = file.read().split()
+    with open(filepath, 'r', encoding="utf8") as input_file:
+        blacklist = input_file.read().split()
     return blacklist
 
 
