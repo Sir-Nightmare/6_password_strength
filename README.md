@@ -2,27 +2,24 @@
 
 This script checks how strong your password is.
 
-You can run it by the command: _python lang_frequency.py <path_to_blacklist>_
+You can run it by the command: `python lang_frequency.py <path_to_blacklist>`
 
 You can download your own password list from here:
-
-https://github.com/danielmiessler/SecLists/tree/master/Passwords
-
-https://dazzlepod.com/site_media/txt/passwords.txt
-
-https://forum.antichat.ru/threads/281655/
+[link1]( https://github.com/danielmiessler/SecLists/tree/master/Passwords) 
+[link2]( https://dazzlepod.com/site_media/txt/passwords.txt) 
+[link3]( https://forum.antichat.ru/threads/281655/)
 
 Password requirements and scores for each characteristic:
 
-* `inclusion` at least 5 characters
+* inclusion at least 5 characters
 
-5 <= n <= 7: +0
+    5 <= n <= 7: +0
 
-8 <= n <= 10 +1
+    8 <= n <= 10 +1
 
-11 <= n <= 14 +2
+    11 <= n <= 14 +2
 
-n => 15: +3
+    n => 15: +3
 
 * the use of both upper-case and lower-case letters (case sensitivity) +2
 
