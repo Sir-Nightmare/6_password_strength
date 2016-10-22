@@ -53,7 +53,8 @@ def print_result(score):
 
 
 if __name__ == '__main__':
-    filepath = sys.argv[1]
+    # filepath = sys.argv[1]
+    filepath = 'blacklist.txt'
     password_list = load_blacklist(filepath)
     password = input('Type your password:\n')
     score = get_password_strength(password, password_list)
